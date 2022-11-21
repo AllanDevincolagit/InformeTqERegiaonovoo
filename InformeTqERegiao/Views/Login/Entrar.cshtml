@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "_Layout";
+}
+<h1>Faça Login</h1>
+
+@if(TempData["erro"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["erro"]
+    </div>
+}
+
+<form action="/Login/Entrar method="post">
+    <label>Email</label>
+    <input type="text" name="Email"/>
+    </br>
+    <label>Senha</label>
+    <input type="password" name="Senha" />
+    </br>
+    <button type="submit">Entrar</button>
+</form>

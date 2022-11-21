@@ -1,0 +1,26 @@
+﻿@model InformeTqERegiao.Model.ListaPermissoesModel
+@{
+    Layout = "_Layout";
+}
+<div class="row">
+    <div class="col-6">
+        <ul class="list-group">
+            @foreach (var item in Model.PermissoesUsuario)
+            {
+                <li class="list-group-item">@item.permissoes.Descricao</li>
+                <li class="list-group-item">@item.permissoes.Role</li>
+            }
+        </ul>
+    </div>
+    <div class="col-6">
+         <ul class="list-group">
+            @foreach (var item in Model.TodasAsPermissoes)
+            {
+                <li class="list-group-item"><a href="/UsuariosPermissoes/Adicionar/@Model.UsuarioId/@item.Id" class="btn btn-success">+</a>
+                    @item.Descricao</li>
+                <li class="list-group-item">@item.Role</li>
+            }
+        </ul>
+    </div>
+
+</div>

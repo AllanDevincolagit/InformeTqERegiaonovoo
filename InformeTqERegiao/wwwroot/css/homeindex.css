@@ -1,0 +1,12 @@
+﻿body {
+}
+
+.conteinercard{
+    display:flex;
+    flex-direction:row;
+}
+
+.card{
+    align-items:flex-start;
+    justify-content:flex-start;
+}
