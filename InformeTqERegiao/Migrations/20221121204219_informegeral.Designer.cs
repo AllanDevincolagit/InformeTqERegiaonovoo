@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InformeTqERegiao.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20221115190604_geral")]
-    partial class geral
+    [Migration("20221121204219_informegeral")]
+    partial class informegeral
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,6 +55,27 @@ namespace InformeTqERegiao.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PERMISSOES");
+                });
+
+            modelBuilder.Entity("InformeTqERegiao.Entidades.Problema", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("paginaemquestao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("problema")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("PROBLEMA");
                 });
 
             modelBuilder.Entity("InformeTqERegiao.Entidades.Usuarios", b =>
@@ -110,6 +131,27 @@ namespace InformeTqERegiao.Migrations
                     b.HasIndex("usuariosId");
 
                     b.ToTable("USUARIOS_PERMISSOES");
+                });
+
+            modelBuilder.Entity("InformeTqERegiao.Entidades.estabelecimento", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("genero")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("ESTABELECIMENTO");
                 });
 
             modelBuilder.Entity("InformeTqERegiao.Entidades.Usuarios_Permissoes", b =>

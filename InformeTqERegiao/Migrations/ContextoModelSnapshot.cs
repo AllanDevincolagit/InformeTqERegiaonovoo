@@ -131,6 +131,27 @@ namespace InformeTqERegiao.Migrations
                     b.ToTable("USUARIOS_PERMISSOES");
                 });
 
+            modelBuilder.Entity("InformeTqERegiao.Entidades.estabelecimento", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("genero")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("ESTABELECIMENTO");
+                });
+
             modelBuilder.Entity("InformeTqERegiao.Entidades.Usuarios_Permissoes", b =>
                 {
                     b.HasOne("InformeTqERegiao.Entidades.Permissoes", "permissoes")

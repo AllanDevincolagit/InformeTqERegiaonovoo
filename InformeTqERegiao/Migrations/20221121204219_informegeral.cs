@@ -2,7 +2,7 @@
 
 namespace InformeTqERegiao.Migrations
 {
-    public partial class geral : Migration
+    public partial class informegeral : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,6 +21,21 @@ namespace InformeTqERegiao.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ESTABELECIMENTO",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    genero = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    descricao = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ESTABELECIMENTO", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PERMISSOES",
                 columns: table => new
                 {
@@ -32,6 +47,21 @@ namespace InformeTqERegiao.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PERMISSOES", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PROBLEMA",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    problema = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    paginaemquestao = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PROBLEMA", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,6 +124,12 @@ namespace InformeTqERegiao.Migrations
         {
             migrationBuilder.DropTable(
                 name: "CIDADES");
+
+            migrationBuilder.DropTable(
+                name: "ESTABELECIMENTO");
+
+            migrationBuilder.DropTable(
+                name: "PROBLEMA");
 
             migrationBuilder.DropTable(
                 name: "USUARIOS_PERMISSOES");
