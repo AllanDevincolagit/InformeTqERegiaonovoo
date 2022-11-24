@@ -13,6 +13,10 @@ namespace InformeTqERegiao
         public DbSet<Usuarios_Permissoes> USUARIOS_PERMISSOES { get; set; }
         public DbSet<Problema> PROBLEMA { get; set; }
         public DbSet<estabelecimento> ESTABELECIMENTO { get; set; }
+        public DbSet<Supermercados> SUPERMERCADOS { get; set; }
+        public DbSet<Roupas> ROUPAS { get; set; }
+        public DbSet<Camamesabanho> CAMAMESABANHO { get; set; }
+        public DbSet<Construcaoutensilios> CONSTRUCAOUTENSILIOS { get; set; }
 
 
     }
