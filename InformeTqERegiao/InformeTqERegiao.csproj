@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\imgs\" />
+    <Content Remove="wwwroot\imgs\beleza.png" />
+    <Content Remove="wwwroot\imgs\comidas.png" />
+    <Content Remove="wwwroot\imgs\servicos.jpg" />
   </ItemGroup>
 
   <ItemGroup>
