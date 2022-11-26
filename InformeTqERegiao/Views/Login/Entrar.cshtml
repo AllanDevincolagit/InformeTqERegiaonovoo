@@ -1,7 +1,5 @@
-﻿@{
-    Layout = "_Layout";
-}
-<h1>Faça Login</h1>
+﻿
+<h1 class="text-center" style="color:#dc3545;">Faça Login</h1>
 
 @if(TempData["erro"] != null)
 {
@@ -10,12 +8,32 @@
     </div>
 }
 
-<form action="/Login/Entrar method="post">
-    <label>Email</label>
-    <input type="text" name="Email"/>
-    </br>
-    <label>Senha</label>
-    <input type="password" name="Senha" />
-    </br>
-    <button type="submit">Entrar</button>
-</form>
+    <div class="row justify-content-center">
+    <form action="/Login/Entrar" method="post" class="col-md-4 text-center" style="background-color:#f7f7f7; color:#dc3545; font-weight:bold; border-radius:5px; border-width:medium; border-style:solid; border-color:#dc3545; margin-top:5px;">
+            <label>Email</label>
+        <input type="text" name="Email" style="margin-top:12px; border-radius:5px; border-color:#dc3545; " />
+            <br />
+            <br />
+            <label>Senha</label>
+        <input type="password" name="Senha" style="margin-top:8px; border-radius:5px; border-color:#dc3545; " />
+            <br />
+            <br />
+            <button class="btn btn-outline-danger btn-sm" type="submit" style="margin-bottom:7px;">Entrar</button>
+        </form>
+    </div>
+    <br />
+    <div class="justify-content-center">
+        <h4 style="color:#dc3545; text-align:center;">
+                Não tem uma conta ?
+        </h4>
+        <br />
+            <div class="col-12 text-center">
+            <a href="/Usuarios/Create">
+                <button class="btn btn-outline-danger btn-lg" style="text-align:center;">
+                    Cadastre-se 
+                </button>
+            </a>
+            </div>
+            
+    </div>
+

@@ -15,7 +15,6 @@ namespace InformeTqERegiao.Controllers
         {
             db = contexto;
         }
-        
         public ActionResult Index()
         {
             return View(db.PERMISSOES.ToList());
