@@ -4,14 +4,16 @@ using InformeTqERegiao;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InformeTqERegiao.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20221125232140_variedades")]
+    partial class variedades
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,33 +91,6 @@ namespace InformeTqERegiao.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CONSTRUCAOUTENSILIOS");
-                });
-
-            modelBuilder.Entity("InformeTqERegiao.Entidades.Farmacias", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("endereco")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("nome")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("redessociais")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("telefone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("whatsapp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FARMACIAS");
                 });
 
             modelBuilder.Entity("InformeTqERegiao.Entidades.Permissoes", b =>

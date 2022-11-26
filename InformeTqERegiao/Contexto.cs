@@ -18,6 +18,11 @@ namespace InformeTqERegiao
         public DbSet<Camamesabanho> CAMAMESABANHO { get; set; }
         public DbSet<Construcaoutensilios> CONSTRUCAOUTENSILIOS { get; set; }
 
+        public DbSet<Variedades> VARIEDADES { get; set; }
+
+        public DbSet<Farmacias> FARMACIAS { get; set; }
+
+
 
     }
 }
