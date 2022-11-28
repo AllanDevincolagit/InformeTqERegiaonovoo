@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InformeTqERegiao.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20221126181328_geral")]
+    [Migration("20221126210156_geral")]
     partial class geral
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

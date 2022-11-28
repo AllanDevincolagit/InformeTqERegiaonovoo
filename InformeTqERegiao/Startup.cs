@@ -24,7 +24,7 @@ namespace InformeTqERegiao
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<Contexto>(a => a.UseSqlServer("Server=DESKTOP-GDT3KDH\\SQLEXPRESS;Database=BD_INFORMETQ;User Id=sa;Password=1234;"));
+            services.AddDbContext<Contexto>(a => a.UseSqlServer("Server=DESKTOP-PHNK60S\\SQLEXPRESS;Database=BD_INFORMETQ;User Id=sa;Password=1234;"));
             services.AddAuthentication("CookieAuthentication").AddCookie("CookieAuthentication", option =>
             {
                 option.LoginPath = "/Login/Entrar";
