@@ -1,38 +1,33 @@
 ﻿@model InformeTqERegiao.Entidades.Permissoes
-@{
-    Layout = "_Layout";
-}
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Permissoes</h4>
+<h4 class="text-center" style="color:#dc3545;">Criar Permissoes</h4>
 <hr />
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" style="background-color:#f7f7f7; color:#dc3545; font-weight:bold; border-radius:5px; border-width:medium; border-style:solid; border-color:#dc3545; margin-top:5px;">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
+                <input asp-for="Descricao" class="form-control" style="margin-top:12px; margin-left:2px; margin-right:2px; border-radius:5px; border-color:#dc3545; " />
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Role" class="control-label"></label>
-                <input asp-for="Role" class="form-control" />
+                <input asp-for="Role" class="form-control" style="margin-top:12px; margin-left:2px; margin-right:2px; border-radius:5px; border-color:#dc3545; " />
                 <span asp-validation-for="Role" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group text-center">
+                <input type="submit" value="Criar" class="btn btn-outline-danger btn-sm" style="margin-top:5px; margin-bottom:5px;"  />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">De volta a lista</a>
 </div>
 

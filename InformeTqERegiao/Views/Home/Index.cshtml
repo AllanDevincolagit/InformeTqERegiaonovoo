@@ -11,6 +11,7 @@
         <meta name="description" content="InformeTq Região Companhy" />
         <meta name="keywords" content="ITQ Região " />
         <meta name="author" content="Alan Devincola, Julia " />
+        <link rel="stylesheet" href="~/css/homeindex.css" />
        
 
         <title>@ViewData["Title"] - Inicio</title>
@@ -22,66 +23,51 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
 
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 3"></button>
+            <div class="carousel-indicators" >
+                <button type="button"  data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button"  data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button"  data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button"  data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
             </div>
 
             <div class="carousel-inner">
 
                 <div class="carousel-item active">
 
-                    <img src="/imgs/SLIDE1.png" class="d-block w-75 mx-auto" alt="Primeiro slide do carrosel" style="height:350px;">
+                    <img src="/imgs/SLIDE1.png" class="d-block w-100 mx-auto" alt="Primeiro slide do carrosel" style="height:350px;">
                     <div class="carousel-caption d-none d-md-block text-black">
-                        <h5>Encontre estabelecimentos</h5>
-                        <p>Site dedicado a anunciar os estabelecimentos de nossa cidade</p>
-
+                      
                     </div>
 
                 </div>
 
                 <div class="carousel-item">
 
-                    <img src="/imgs/SLIDE2.png" class="d-block w-75 mx-auto" alt="..." style="height:350px; object-fit:cover">
+                    <img src="/imgs/SLIDE2.png" class="d-block w-100 mx-auto" alt="Segundo slide do carrosel" style="height:350px; object-fit:cover">
 
                     <div class="carousel-caption d-none d-md-block text-black">
-                        <h5>Inscreva-se em um evento</h5>
-                        <p>Participe de palestras que combinam com você.</p>
+                        
                     </div>
 
                 </div>
 
                 <div class="carousel-item">
-                    <img src="/imgs/SLIDE3.png" class="d-block w-75 mx-auto" alt="..." style="height:350px; object-fit:cover">
+                    <img src="/imgs/SLIDE3.png" class="d-block w-100 mx-auto" alt="Terceiro slide do carrosel" style="height:350px; object-fit:cover">
 
                     <div class="carousel-caption d-none d-md-block text-black">
-                        <h5>Faça novas conexões</h5>
-                        <p>Conheça pessoas interessadas nos assuntos em que você é craque !</p>
+                      
                     </div>
                 </div>
 
                 <div class="carousel-item">
 
-                    <img src="/imgs//SLIDE4.png" class="d-block w-75 mx-auto" alt="..." style="height:350px; object-fit:cover;">
+                    <img src="/imgs//SLIDE4.png" class="d-block w-100 mx-auto" alt="Quarto slide do carrosel" style="height:350px; object-fit:cover;">
 
                     <div class="carousel-caption d-none d-md-block text-black">
-                        <h5>Busque novas inspirações</h5>
-                        <p>Encontre o conteúdo necessário para alavancar suas ideias</p>
+                       
                     </div>
                 </div>
 
-                <div class="carousel-item">
-
-                    <img src="/imgs/bannerCinco.jpg" class="d-block w-75 mx-auto" alt="..." style="height:350px; object-fit:cover;">
-
-                    <div class="carousel-caption d-none d-md-block text-black">
-                        <h5>Inspire a outros</h5>
-                        <p>Ajude a construir uma comunidade unida e inclusiva</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -141,6 +127,14 @@
                         </div>
                         <div class="col-md-6">
                             <img class="img-fluid" src="/imgs/logonova.png" alt="Imagem da sessão sobre nós">
+                            <br />
+                            <br />
+                            <ul id="about-list" style="margin-left:12px;">
+                                <li><i class="fas fa-check">Site dedicado a anunciar os estabelecimentos de nossa cidade</i></li>
+                                <li><i class="fas fa-check">Encontre tudo aquilo que você precisa em sua cidade</i></li>
+                                <li><i class="fas fa-check">Anuncie seu estabelecimento e ganhe engajamento</i></li>
+                                <li><i class="fas fa-check">Conheça novas opções para seu consumo e lazer</i></li>
+                            </ul>
                         </div>
                         <div class="col-md-6">
                             <h3 class="about-title">Nos ajudando a encontrar tudo aquilo que precisamos</h3>
@@ -149,12 +143,6 @@
                             <p>Allan e eu(Julia) decidimos ajuda-los, criamos o projeto no ano de 2021 e estamos em completo desenvolvimento visando a praticidade.</p>
                             <p>DIVIRTAM-SE!</p>
                             <p>Att. Allan e Julia</p>
-                            <ul id="about-list">
-                                <li><i class="fas fa-check">aaaaaaaaaaaaaaaaaa</i></li>
-                                <li><i class="fas fa-check">aaaaaaaaaaaaaaaaaa</i></li>
-                                <li><i class="fas fa-check">aaaaaaaaaaaaaaaaaa</i></li>
-                                <li><i class="fas fa-check">aaaaaaaaaaaaaaaaaa</i></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -171,32 +159,32 @@
                     </div>
                     <div class="col-md-4 service-box">
                         <i class="fas fa-mobile-alt"></i>
-                        <h4 style="color:#dc3545;">Aplicativos nativos</h4>
+                        <h4 style="color:#dc3545;">Exibir os estabelecimentos locais</h4>
                         <p>Utilizamos o poder dos dispositivos móveis construindo aplicativos nativos</p>
                     </div>
                     <div class="col-md-4 service-box">
                         <i class="fas fa-mobile-alt"></i>
-                        <h4 style="color:#dc3545;">Aplicativos nativos</h4>
+                        <h4 style="color:#dc3545;">Ajudar a guiar as pessoas até seus destinos desejados</h4>
                         <p>Utilizamos o poder dos dispositivos móveis construindo aplicativos nativos</p>
                     </div>
                     <div class="col-md-4 service-box">
                         <i class="fas fa-mobile-alt"></i>
-                        <h4 style="color:#dc3545;">Aplicativos nativos</h4>
+                        <h4 style="color:#dc3545;">Analisar e Registrar os estabelecimentos locais</h4>
                         <p>Utilizamos o poder dos dispositivos móveis construindo aplicativos nativos</p>
                     </div>
                     <div class="col-md-4 service-box">
                         <i class="fas fa-mobile-alt"></i>
-                        <h4 style="color:#dc3545;">Aplicativos nativos</h4>
+                        <h4 style="color:#dc3545;">Manter um site com informações uteis e atualizadas</h4>
                         <p>Utilizamos o poder dos dispositivos móveis construindo aplicativos nativos</p>
                     </div>
                     <div class="col-md-4 service-box">
                         <i class="fas fa-mobile-alt"></i>
-                        <h4 style="color:#dc3545;">Aplicativos nativos</h4>
+                        <h4 style="color:#dc3545;">Receber e aplicar em nosso software o feedback da comunidade</h4>
                         <p>Utilizamos o poder dos dispositivos móveis construindo aplicativos nativos</p>
                     </div>
                     <div class="col-md-4 service-box">
                         <i class="fas fa-mobile-alt"></i>
-                        <h4 style="color:#dc3545;">Aplicativos nativos</h4>
+                        <h4 style="color:#dc3545;">Ajudar a construir uma comunidade mais inclusiva e conectada</h4>
                         <p>Utilizamos o poder dos dispositivos móveis construindo aplicativos nativos</p>
                     </div>
                 </div>

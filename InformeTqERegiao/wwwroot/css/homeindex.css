@@ -10,3 +10,8 @@
     align-items:flex-start;
     justify-content:flex-start;
 }
+
+#carouselExampleCaptions .carousel-indicators{
+    background-color: #f7f7f7f7;
+}
+ 
