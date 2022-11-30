@@ -4,50 +4,42 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>Farmacias</h4>
+<h4 class="text-center" style="color: #dc3545;">Registrar Farmacia</h4>
 <hr />
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" style="background-color:#f7f7f7; color:#dc3545; font-weight:bold; border-radius:5px; border-width:medium; border-style:solid; border-color:#dc3545; margin-top:5px;">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group text-center">
                 <label asp-for="nome" class="control-label"></label>
-                <input asp-for="nome" class="form-control" />
+                <input asp-for="nome" class="form-control" style="margin-top:12px; border-radius:5px; border-color:#dc3545;"  />
                 <span asp-validation-for="nome" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-center">
                 <label asp-for="endereco" class="control-label"></label>
-                <input asp-for="endereco" class="form-control" />
+                <input asp-for="endereco" class="form-control" style="margin-top:12px; border-radius:5px; border-color:#dc3545;"  />
                 <span asp-validation-for="endereco" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-center">
                 <label asp-for="telefone" class="control-label"></label>
-                <input asp-for="telefone" class="form-control" />
+                <input asp-for="telefone" class="form-control" style="margin-top:12px; border-radius:5px; border-color:#dc3545;"  />
                 <span asp-validation-for="telefone" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-center">
                 <label asp-for="whatsapp" class="control-label"></label>
-                <input asp-for="whatsapp" class="form-control" />
+                <input asp-for="whatsapp" class="form-control" style="margin-top:12px; border-radius:5px; border-color:#dc3545;"  />
                 <span asp-validation-for="whatsapp" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-center">
                 <label asp-for="redessociais" class="control-label"></label>
-                <input asp-for="redessociais" class="form-control" />
+                <input asp-for="redessociais" class="form-control" style="margin-top:12px; border-radius:5px; border-color:#dc3545;"  />
                 <span asp-validation-for="redessociais" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <br />
+            <div class="form-group text-center">
+                <input type="submit" value="Registrar" class="btn btn-outline-danger btn-md" style="text-align:center;" />
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
