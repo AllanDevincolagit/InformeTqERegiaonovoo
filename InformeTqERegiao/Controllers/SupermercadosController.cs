@@ -18,6 +18,11 @@ namespace InformeTqERegiao.Controllers
 
         // GET: SupermercadosController
 
+        public IActionResult SucessoCreate()
+        {
+            return View();
+        }
+
         public IActionResult CarvalhoUm()
         {
             return View();
@@ -88,7 +93,7 @@ namespace InformeTqERegiao.Controllers
             {
                 db.SUPERMERCADOS.Add(collection);
                 db.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(SucessoCreate));
             }
             catch
             {

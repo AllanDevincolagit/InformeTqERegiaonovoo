@@ -22,6 +22,12 @@ namespace InformeTqERegiao
 
         public DbSet<Farmacias> FARMACIAS { get; set; }
 
+        public DbSet<adm> ADMINISTRADOR { get; set; }
+
+        public DbSet<Permissaoadm> PERMADM { get; set; }
+
+        public DbSet<Adm_Permissoes> ADMPERMISSOES { get; set; }
+
 
 
     }

@@ -7,6 +7,20 @@ namespace InformeTqERegiao.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "ADMINISTRADOR",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    codigo = table.Column<int>(type: "int", nullable: false),
+                    senha = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ADMINISTRADOR", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CAMAMESABANHO",
                 columns: table => new
                 {
@@ -84,6 +98,20 @@ namespace InformeTqERegiao.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FARMACIAS", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PERMADM",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PERMADM", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -184,6 +212,33 @@ namespace InformeTqERegiao.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ADMPERMISSOES",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AdmId = table.Column<int>(type: "int", nullable: false),
+                    PermissaoId = table.Column<int>(type: "int", nullable: false),
+                    PermissaoadmId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ADMPERMISSOES", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ADMPERMISSOES_ADMINISTRADOR_AdmId",
+                        column: x => x.AdmId,
+                        principalTable: "ADMINISTRADOR",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ADMPERMISSOES_PERMADM_PermissaoadmId",
+                        column: x => x.PermissaoadmId,
+                        principalTable: "PERMADM",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "USUARIOS_PERMISSOES",
                 columns: table => new
                 {
@@ -212,6 +267,16 @@ namespace InformeTqERegiao.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_ADMPERMISSOES_AdmId",
+                table: "ADMPERMISSOES",
+                column: "AdmId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ADMPERMISSOES_PermissaoadmId",
+                table: "ADMPERMISSOES",
+                column: "PermissaoadmId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_USUARIOS_PERMISSOES_permissoesId",
                 table: "USUARIOS_PERMISSOES",
                 column: "permissoesId");
@@ -224,6 +289,9 @@ namespace InformeTqERegiao.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "ADMPERMISSOES");
+
             migrationBuilder.DropTable(
                 name: "CAMAMESABANHO");
 
@@ -253,6 +321,12 @@ namespace InformeTqERegiao.Migrations
 
             migrationBuilder.DropTable(
                 name: "VARIEDADES");
+
+            migrationBuilder.DropTable(
+                name: "ADMINISTRADOR");
+
+            migrationBuilder.DropTable(
+                name: "PERMADM");
 
             migrationBuilder.DropTable(
                 name: "PERMISSOES");

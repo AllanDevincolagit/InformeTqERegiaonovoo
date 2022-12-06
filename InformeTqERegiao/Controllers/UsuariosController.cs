@@ -15,6 +15,11 @@ namespace InformeTqERegiao.Controllers
             db = contexto;
         }
 
+        public IActionResult SucessoCreateUser()
+        {
+            return View();
+        }
+
         public IActionResult CadLog()
         {
             return View();
@@ -79,7 +84,7 @@ namespace InformeTqERegiao.Controllers
             {
                 db.USUARIOS.Add(collection);
                 db.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(SucessoCreateUser));
             }
             catch
             {
