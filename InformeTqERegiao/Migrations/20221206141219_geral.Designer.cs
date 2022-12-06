@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InformeTqERegiao.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20221205183805_geral")]
+    [Migration("20221206141219_geral")]
     partial class geral
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,31 +20,6 @@ namespace InformeTqERegiao.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("InformeTqERegiao.Entidades.Adm_Permissoes", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AdmId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PermissaoId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PermissaoadmId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AdmId");
-
-                    b.HasIndex("PermissaoadmId");
-
-                    b.ToTable("ADMPERMISSOES");
-                });
 
             modelBuilder.Entity("InformeTqERegiao.Entidades.Camamesabanho", b =>
                 {
@@ -143,24 +118,6 @@ namespace InformeTqERegiao.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FARMACIAS");
-                });
-
-            modelBuilder.Entity("InformeTqERegiao.Entidades.Permissaoadm", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Role")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PERMADM");
                 });
 
             modelBuilder.Entity("InformeTqERegiao.Entidades.Permissoes", b =>
@@ -338,24 +295,6 @@ namespace InformeTqERegiao.Migrations
                     b.ToTable("VARIEDADES");
                 });
 
-            modelBuilder.Entity("InformeTqERegiao.Entidades.adm", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("codigo")
-                        .HasColumnType("int");
-
-                    b.Property<string>("senha")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ADMINISTRADOR");
-                });
-
             modelBuilder.Entity("InformeTqERegiao.Entidades.estabelecimento", b =>
                 {
                     b.Property<int>("id")
@@ -375,23 +314,6 @@ namespace InformeTqERegiao.Migrations
                     b.HasKey("id");
 
                     b.ToTable("ESTABELECIMENTO");
-                });
-
-            modelBuilder.Entity("InformeTqERegiao.Entidades.Adm_Permissoes", b =>
-                {
-                    b.HasOne("InformeTqERegiao.Entidades.adm", "administrador")
-                        .WithMany()
-                        .HasForeignKey("AdmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("InformeTqERegiao.Entidades.Permissaoadm", "Permissaoadm")
-                        .WithMany()
-                        .HasForeignKey("PermissaoadmId");
-
-                    b.Navigation("administrador");
-
-                    b.Navigation("Permissaoadm");
                 });
 
             modelBuilder.Entity("InformeTqERegiao.Entidades.Usuarios_Permissoes", b =>
